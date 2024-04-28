@@ -1,5 +1,6 @@
 
 
+import 'package:election_app/pages/firstpage.dart';
 import 'package:flutter/material.dart';
 import 'package:election_app/models/candidat.dart';
 import 'package:election_app/comon/c_button.dart';
@@ -18,26 +19,30 @@ class _CandidatCreationState extends State<CandidatCreation> {
   final _formKey = GlobalKey<FormState>();
   final Candidat candidat= Candidat();
 
+
   DateTime? birthdate;
 
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    final Candidat candidat= Candidat();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Candidate creation"),
         actions: [
           IconButton(
               onPressed: (){
-                takePicture();
+                //takePicture();
 
               },
               icon: Icon(Icons.photo))
         ],
       ),
-      body: ListView(
+      body: Container(
+    padding: EdgeInsets.all(10),
+    child: Form(
+    key: _formKey,
+      child: ListView(
         children: [
           CIinput(name: 'Nom',
             validator: (value) {
@@ -51,6 +56,7 @@ class _CandidatCreationState extends State<CandidatCreation> {
             },
             prefixIcon: Icon(Icons.person),
           ),
+          SizedBox(height: 20,),
           CIinput(
             name: 'Prénom(s)',
 
@@ -108,6 +114,10 @@ class _CandidatCreationState extends State<CandidatCreation> {
         ],
       ),
 
+
+
+      ),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: CButton(
           onPressed: () {
@@ -122,6 +132,7 @@ class _CandidatCreationState extends State<CandidatCreation> {
       );
   }
 }
+/*
 class takePicture extends StatefulWidget {
   @override
   _takePictureState createState() => _takePictureState();
@@ -164,3 +175,4 @@ class _takePictureState extends State<takePicture> {
         );
     }
 }
+*/
