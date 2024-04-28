@@ -76,7 +76,7 @@ class _CandidatCreationState extends State<CandidatCreation> {
           ),
           SizedBox(height: 20,),
           CIinput(
-            name: 'Description',
+            name: 'Description ',
 
             validator: (value) {
               if (value!.isEmpty) {

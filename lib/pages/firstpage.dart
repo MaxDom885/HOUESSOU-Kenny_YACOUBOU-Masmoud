@@ -22,7 +22,7 @@ class _FirstpageState extends State<Firstpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Elections"),
+        title: Text("Election"),
       ),
       body: ListView(
         children: candidats
